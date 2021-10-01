@@ -1,13 +1,14 @@
 name: Desafio Analista de Teste
 on: [push]
 jobs:
-  Rspec-with-ruby:
+  rspec-with-ruby:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout on repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         
       - name: Setup Ruby
-        uses: actions/setup-ruby@v1
+      - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.6'
           
