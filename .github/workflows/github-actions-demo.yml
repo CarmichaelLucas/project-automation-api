@@ -1,7 +1,18 @@
-name: GitHub Actions Demo
+name: Desafio Analista de Teste
 on: [push]
 jobs:
-  QA:
-    runs-on: ubuntu-latest
+  Rspec-with-ruby:
     steps:
-      - run: echo "Olá, GitHub!"
+      - name: Checkout on repository
+        uses: actions/checkout@v2
+        
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+          
+      - name: Install depedencies
+      - run: bundle install
+      
+      - name: Running Tests Integration
+      - run: bundle exec rspec
