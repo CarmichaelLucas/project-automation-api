@@ -2,7 +2,7 @@ describe 'Gerar Boleto:' do
     before(:each) do
         @name = "Stephen Strange"
         @cpf = "35502074846"
-        @token = "INSIRA SEU TOKEN"
+        @token = ENV['TOKEN_API_YAPAY']
     end
     
     it 'Dados validos para compra' do
