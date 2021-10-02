@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  rspec:
+    build:
+      dockerfile: ./docker/ruby.dockerfile
+      context: .
+    image: yapay/qa
+    container_name: rspec
+    volumes: 
+      - "./test/:/test/"
+    env_file:
+      - .env
+    tty: true

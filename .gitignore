@@ -1,1 +1,9 @@
-evidencias/
+# Reports Tests
+test/reports/*
+!test/reports/.git-keep
+
+# Credentials
+.env
+
+# 
+Gemfile.lock
