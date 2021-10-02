@@ -3,6 +3,7 @@ describe 'Gerar Boleto:' do
         @name = "Stephen Strange"
         @cpf = "35502074846"
         @token = ENV['TOKEN_API_YAPAY']
+        puts @token
     end
     
     it 'Dados validos para compra' do
