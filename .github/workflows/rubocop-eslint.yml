@@ -5,13 +5,11 @@ on: [push]
 jobs:
   rspec-with-ruby:
     runs-on: ubuntu-latest
-    env:
-      TOKEN_API_YAPAY: ${{ secrets.TOKEN_API_YAPAY }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.6'
       - run: bundle install
-      - run: export TOKEN_API_YAPAY=${{ env.TOKEN_API_YAPAY }}
+      - run: export TOKEN_API_YAPAY=${{ secrets.TOKEN_API_YAPAY }}
       - run: bundle exec rspec test/
