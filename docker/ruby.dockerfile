@@ -8,6 +8,7 @@ RUN gem update --system \
 
 WORKDIR /test
 
+COPY Gemfile .
 COPY /test .
 
 RUN bundle install
