@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.6'
-      - run: |
-          ls ${{ github.workspace }}
       - run: bundle install
+      - run: |
+          cd ${{ github.workspace }}/test
       #- run: bundle exec rspec
