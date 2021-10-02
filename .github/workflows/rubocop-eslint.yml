@@ -11,6 +11,6 @@ jobs:
         with:
           ruby-version: '2.6'
       - run: bundle install
-      - run: |
-          cd ${{ github.workspace }}/test
+      #- run: |
+      #    cd ${{ github.workspace }}/test
       - run: bundle exec rspec
