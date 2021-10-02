@@ -13,5 +13,4 @@ jobs:
         with:
           ruby-version: '2.6'
       - run: bundle install
-      - run: echo "key => $TOKEN_API_YAPAY"
-      - run: ENV="$TOKEN_API_YAPAY" bundle exec rspec test/
+      - run: ENV=${{env.TOKEN_API_YAPAY}} bundle exec rspec test/
