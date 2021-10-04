@@ -7,3 +7,6 @@ test/reports/*
 
 # 
 Gemfile.lock
+
+# Debbug with byebug
+test/.byebug_history

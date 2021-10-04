@@ -1,20 +1,32 @@
 require 'httparty'
 require 'httparty/request'
 require 'httparty/response/headers'
+require 'faker'
+require 'byebug'
+require 'factory_bot'
 
-require_relative '../config/gerar_bol.rb'
+# Helpers
+require_relative 'helpers/boleto_helper'
+
+# Factories
+require_relative 'factories/addresses'
+require_relative 'factories/contacts'
+require_relative 'factories/customer'
+require_relative 'factories/payload'
+require_relative 'factories/payment'
+require_relative 'factories/transaction_product'
+require_relative 'factories/transaction'
 
 RSpec.configure do |config|
-  include Gerar_Boleto
+  
+  # Boleto Helper
+  include API
 
-  config.expect_with :rspec do |expectations|
-    expectations.include_chain_clauses_in_custom_matcher_descriptions = true
-  end
+  # rubocop-rspec
+  config.alias_example_group_to :detail, :detailed => true
 
-  config.mock_with :rspec do |mocks|
-    mocks.verify_partial_doubles = true
-  end
+  # factory_bot
+  config.include FactoryBot::Syntax::Methods
 
-  config.shared_context_metadata_behavior = :apply_to_host_groups
 
 end

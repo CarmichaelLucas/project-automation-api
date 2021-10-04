@@ -1,6 +1,10 @@
 name: Projeto QA Yapay
 
-on: [push]
+on: 
+  push: 
+    branch: [master, develop]
+  pull_request:
+    branch: master
 
 jobs:
   rspec-with-ruby:
@@ -13,5 +17,5 @@ jobs:
         with:
           ruby-version: '2.6'
       - run: bundle install
-      - run: echo "key => $TOKEN_API_YAPAY"
-      - run: ENV="$TOKEN_API_YAPAY" bundle exec rspec test/
+      - run: rubocop -a test/
+      - run: rubocop -A test/
