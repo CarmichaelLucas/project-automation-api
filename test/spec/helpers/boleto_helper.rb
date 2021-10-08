@@ -1,5 +1,6 @@
-module API
+# frozen_string_literal: true
 
+module API
   class Boleto
     include HTTParty
 

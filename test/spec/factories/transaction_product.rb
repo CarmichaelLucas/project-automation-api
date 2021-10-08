@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../models/transaction_product'
 
 FactoryBot.define do

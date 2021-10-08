@@ -15,4 +15,4 @@ jobs:
         with:
           ruby-version: '2.6'
       - run: bundle install
-      - run: rubocop -A test/
+      - run: rubocop -a test/

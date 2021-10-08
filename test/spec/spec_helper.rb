@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'httparty'
 require 'httparty/request'
 require 'httparty/response/headers'
@@ -18,15 +20,12 @@ require_relative 'factories/transaction_product'
 require_relative 'factories/transaction'
 
 RSpec.configure do |config|
-  
   # Boleto Helper
   include API
 
   # rubocop-rspec
-  config.alias_example_group_to :detail, :detailed => true
+  config.alias_example_group_to :detail, detailed: true
 
   # factory_bot
   config.include FactoryBot::Syntax::Methods
-
-
 end

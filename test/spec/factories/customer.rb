@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../models/customer'
 
 FactoryBot.define do
@@ -11,5 +13,4 @@ FactoryBot.define do
     contacts      { attributes_for_list(:contacts, 2) }
     addresses     { attributes_for_list(:addresses, 1) }
   end
-
 end
